@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="640" viewBox="0 0 1000 640" role="img" aria-labelledby="title desc"><title id="title">석판 1차 프로젝트 전체 구성</title><desc id="desc">실시간 투표형 오목 서비스 · 온프레미스 플랫폼</desc><rect width="1000" height="842" rx="20" fill="#f6f8fc"/>
+<text x="32" y="44" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#12253f">석판 1차 프로젝트 전체 구성</text>
+<text x="32" y="74" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#42526b">실시간 투표형 오목 서비스 · 온프레미스 플랫폼</text>
+<rect x="32" y="100" width="936" height="94" rx="12" fill="#fff" stroke="#ccd7e6"/><rect x="32" y="114" width="4" height="26" rx="2" fill="#2563eb"/>
+<text x="52" y="136" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#2563eb">서비스 진입</text>
+<text x="52" y="166" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#42526b">브라우저 · HTTPS/WSS · HAProxy LB · NGINX Gateway Fabric</text>
+<rect x="32" y="218" width="606" height="390" rx="14" fill="#eaf1ff" stroke="#a9bee5"/>
+<text x="52" y="252" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#1d4ed8">KUBERNETES / CONTROL PLANE 3대 · WORKER 2대</text>
+<rect x="52" y="270" width="566" height="98" rx="12" fill="#fff" stroke="#ccd7e6"/><rect x="52" y="284" width="4" height="26" rx="2" fill="#2563eb"/>
+<text x="72" y="306" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#2563eb">애플리케이션 영역</text>
+<text x="72" y="336" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#42526b">React/Nginx Frontend 2개 · FastAPI Backend 2개</text>
+<rect x="52" y="384" width="566" height="96" rx="12" fill="#fff" stroke="#ccd7e6"/><rect x="52" y="398" width="4" height="26" rx="2" fill="#2563eb"/>
+<text x="72" y="420" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#2563eb">상태 공유·배포</text>
+<text x="72" y="450" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#42526b">Redis(AOF·PVC) · Jenkins · Argo CD</text>
+<rect x="52" y="496" width="566" height="92" rx="12" fill="#fff" stroke="#ccd7e6"/><rect x="52" y="510" width="4" height="26" rx="2" fill="#2563eb"/>
+<text x="72" y="532" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#2563eb">관측·알림</text>
+<text x="72" y="562" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#42526b">Prometheus · Grafana · Loki · Alloy · Alertmanager</text>
+<rect x="662" y="218" width="306" height="178" rx="12" fill="#fff" stroke="#ccd7e6"/><rect x="662" y="232" width="4" height="26" rx="2" fill="#0f766e"/>
+<text x="682" y="254" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#0f766e">별도 VM의 데이터 서비스</text>
+<text x="682" y="284" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#42526b">MaxScale 1대</text>
+<text x="682" y="309" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#42526b">MariaDB Primary · Replica</text>
+<text x="682" y="334" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#42526b">NFS 영속 스토리지</text>
+<rect x="662" y="420" width="306" height="188" rx="12" fill="#fff" stroke="#ccd7e6"/><rect x="662" y="434" width="4" height="26" rx="2" fill="#9a4b0a"/>
+<text x="682" y="456" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#9a4b0a">별도 VM의 기반 서비스</text>
+<text x="682" y="486" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#42526b">Harbor 이미지 저장소</text>
+<text x="682" y="511" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#42526b">Ansible 제어 VM</text>
+<text x="682" y="536" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#42526b">vRouter 라우팅·방화벽</text>
+<text x="682" y="561" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#42526b">HAProxy LB 1대</text>
+</svg>
