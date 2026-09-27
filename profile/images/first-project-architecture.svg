@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="842" viewBox="0 0 1000 842" role="img" aria-labelledby="title desc"><title id="title">SeokPan / first-project architecture</title><desc id="desc">On-premise service platform for a realtime, vote-based Gomoku game</desc><rect width="1000" height="842" rx="20" fill="#f6f8fc"/>
+<text x="32" y="44" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#12253f">SeokPan / first-project architecture</text>
+<text x="32" y="74" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#42526b">On-premise service platform for a realtime, vote-based Gomoku game</text>
+<rect x="32" y="100" width="936" height="94" rx="12" fill="#fff" stroke="#ccd7e6"/><rect x="32" y="114" width="4" height="26" rx="2" fill="#2563eb"/>
+<text x="52" y="136" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#2563eb">Service entry</text>
+<text x="52" y="166" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#42526b">Browser · HTTPS / WSS · HAProxy LB · NGINX Gateway Fabric</text>
+<rect x="32" y="218" width="606" height="390" rx="14" fill="#eaf1ff" stroke="#a9bee5"/>
+<text x="52" y="252" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#1d4ed8">KUBERNETES / 3 CONTROL PLANES + 2 WORKERS</text>
+<rect x="52" y="270" width="566" height="98" rx="12" fill="#fff" stroke="#ccd7e6"/><rect x="52" y="284" width="4" height="26" rx="2" fill="#2563eb"/>
+<text x="72" y="306" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#2563eb">Application namespace</text>
+<text x="72" y="336" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#42526b">React / Nginx frontend x2 · FastAPI backend x2</text>
+<rect x="52" y="384" width="566" height="96" rx="12" fill="#fff" stroke="#ccd7e6"/><rect x="52" y="398" width="4" height="26" rx="2" fill="#2563eb"/>
+<text x="72" y="420" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#2563eb">Shared runtime and delivery</text>
+<text x="72" y="450" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#42526b">Redis + AOF / PVC · Jenkins · Argo CD</text>
+<rect x="52" y="496" width="566" height="92" rx="12" fill="#fff" stroke="#ccd7e6"/><rect x="52" y="510" width="4" height="26" rx="2" fill="#2563eb"/>
+<text x="72" y="532" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#2563eb">Observability</text>
+<text x="72" y="562" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#42526b">Prometheus · Grafana · Loki · Alloy · Alertmanager</text>
+<rect x="662" y="218" width="306" height="178" rx="12" fill="#fff" stroke="#ccd7e6"/><rect x="662" y="232" width="4" height="26" rx="2" fill="#0f766e"/>
+<text x="682" y="254" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#0f766e">External data services</text>
+<text x="682" y="284" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#42526b">MaxScale x1</text>
+<text x="682" y="309" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#42526b">MariaDB Primary / Replica</text>
+<text x="682" y="334" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#42526b">NFS persistent storage</text>
+<rect x="662" y="420" width="306" height="188" rx="12" fill="#fff" stroke="#ccd7e6"/><rect x="662" y="434" width="4" height="26" rx="2" fill="#9a4b0a"/>
+<text x="682" y="456" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#9a4b0a">External infrastructure</text>
+<text x="682" y="486" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#42526b">Harbor image registry</text>
+<text x="682" y="511" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#42526b">Ansible controller</text>
+<text x="682" y="536" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#42526b">vRouter network / firewall</text>
+<text x="682" y="561" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#42526b">HAProxy LB x1</text>
+<text x="32" y="646" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#52647d">KEY RELATIONSHIPS</text>
+<text x="32" y="677" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#42526b">Requests: Gateway routes frontend pages, /api/v1 and /ws/v1 to the matching service.</text>
+<text x="32" y="708" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#42526b">State: backend replicas share Redis; durable records use MariaDB through MaxScale.</text>
+<text x="32" y="739" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#42526b">Delivery: Jenkins creates a GitOps PR; approved changes are deployed by Argo CD.</text>
+<text x="32" y="787" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#42526b">Scope: first-project MVP; VM services and Kubernetes workloads are shown separately.</text>
+<text x="32" y="812" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#42526b">Ansible provisions the foundation; GitOps manages Kubernetes desired state.</text>
+</svg>
