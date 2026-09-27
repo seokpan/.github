@@ -14,12 +14,14 @@ VMware·CentOS Stream 9 기반 **물리 호스트 4대, VM 16대**에서 Control
 - **상태 저장**: MariaDB는 회원·공식 착수·결과·레이팅을, Redis는 세션·방·투표·접속 상태를 맡습니다. Backend 2개 Replica가 같은 저장소를 사용하고, DB 접속은 MaxScale과 TLS를 거칩니다.
 - **구축과 배포**: Ansible이 서버·클러스터 기반을 구성하고, GitOps가 Kubernetes 배포 설정을 관리합니다. Jenkins가 검증된 이미지로 배포 PR을 생성하며, 팀원의 승인·Merge 후 Argo CD가 반영합니다.
 
-## 주요 구현
+## 기술 구성과 주요 구현
+
+팀 전체에 적용한 기술과 구현 범위입니다. 팀원별 담당은 아래 ‘팀과 담당’에서 구분합니다.
 
 | 영역 | 구현한 내용 | 확인할 코드·자료 |
 |---|---|---|
-| 인프라 자동화 | 라우팅·방화벽·HAProxy, kubeadm·containerd·Calico, DB·NFS 및 인증서 공급을 Ansible Role로 구성 | [Infra](https://github.com/seokpan/seokpan-infra) |
-| 실시간 서비스 | React·TypeScript UI, FastAPI HTTP/WebSocket API, 투표 마감·게임 결과 저장, Replica 간 세션·방 상태 공유 | [Application](https://github.com/seokpan/seokpan-app) |
+| 인프라 자동화 | VMware·CentOS Stream 9 VM에서 Ansible Role로 라우팅·방화벽·HAProxy, kubeadm·containerd·Calico, DB·NFS 및 인증서 공급을 구성 | [Infra](https://github.com/seokpan/seokpan-infra) |
+| 실시간 서비스 | React·TypeScript UI와 FastAPI HTTP/WebSocket API를 구현하고 MariaDB·Redis로 투표 마감·결과 저장 및 Replica 간 상태 공유 | [Application](https://github.com/seokpan/seokpan-app) |
 | 승인 기반 배포 | Jenkins 테스트·이미지 빌드·스캔, Harbor Digest 확정, 변경 컴포넌트의 GitOps PR 생성, Argo CD 동기화 | [이미지 파이프라인](https://github.com/seokpan/seokpan-app/blob/main/Jenkinsfile.image-pipeline) · [GitOps](https://github.com/seokpan/seokpan-gitops) |
 | 관측성 | Prometheus 메트릭 수집, Alloy의 컨테이너 로그 수집과 Loki 조회, Grafana 대시보드·Alertmanager 알림 구성 | [Observability](https://github.com/seokpan/seokpan-gitops/tree/main/observability) |
 | 데이터·복구 | MariaDB 복제와 백업 체인, etcd Snapshot 복구 자동화, Redis AOF/PVC와 복구 검증 | [복구 Playbook](https://github.com/seokpan/seokpan-infra/tree/main/ansible/playbooks) · [검증 기록](https://github.com/seokpan/seokpan-docs/tree/main/12_MVP_검증·측정_계획) |
