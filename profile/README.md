@@ -57,7 +57,7 @@ VMware·CentOS Stream 9 기반 **물리 호스트 4대, VM 16대**에서 Control
 
 | 저장소 | 여기서 확인할 내용 |
 |---|---|
-| [seokpan-app](https://github.com/seokpan/seokpan-app) | 서비스 코드, API·도메인 계약, 테스트, 컨테이너·CI |
+| [seokpan-app](https://github.com/seokpan/seokpan-app) | 서비스 코드, API·도메인 규칙, 테스트, 컨테이너·CI |
 | [seokpan-infra](https://github.com/seokpan/seokpan-infra) | 서버·네트워크·클러스터 구축, DB·스토리지·복구 자동화 |
 | [seokpan-gitops](https://github.com/seokpan/seokpan-gitops) | Kubernetes 배포 설정, Argo CD, 플랫폼·CI/CD·관측성 리소스 |
 | [seokpan-docs](https://github.com/seokpan/seokpan-docs) | 설계, 변경 결정, Runbook, 검증 결과, 트러블슈팅 |
