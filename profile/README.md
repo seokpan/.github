@@ -122,7 +122,7 @@ VMware·CentOS Stream 9 기반 **물리 호스트 4대, VM 16대**에 Kubernetes
 | MariaDB 복구 | 양쪽 DB 유실 시나리오에서 단일 노드 서비스 재개 **1분 29초**, 이중화 정상화 **4분**, 미백업 데이터 **3건 손실** |
 | etcd 복구 | Snapshot Restore부터 Quorum·API·Kubernetes Object 확인까지 **52초** — 전체 클러스터 재구축 시간과 구분 |
 
-측정 조건·복구 범위는 [역할별 검증 문서](https://github.com/seokpan/seokpan-docs/tree/main/12_MVP_검증·측정_계획), 종료 결과와 후속 보완은 [Current State](https://github.com/seokpan/seokpan-docs/blob/main/CURRENT_STATE.md)에 연결했습니다. 재접속·다중 Pod·장애 경계의 강화 검증은 [App #112](https://github.com/seokpan/seokpan-app/issues/112)에서 계속 추적합니다.
+측정 조건·복구 범위는 [역할별 검증 문서](https://github.com/seokpan/seokpan-docs/tree/main/12_MVP_검증·측정_계획), 종료 결과와 후속 보완은 [Current State](https://github.com/seokpan/seokpan-docs/blob/main/CURRENT_STATE.md) 13절에 연결했습니다. [App #112](https://github.com/seokpan/seokpan-app/issues/112)는 2026-10-03 지정 근거·미검증 경계의 분류와 인계를 완료해 종료됐습니다. V-02 다섯 전체 경로는 `NOT TESTED`이며 공식 `KAI-E2E/CON/REC/PERF/DR` Gate는 Final PASS가 아닙니다.
 
 Background Runner 후속 보완 [App #117](https://github.com/seokpan/seokpan-app/issues/117)은 **2026-10-02 현행 수동 대응 정책 기준으로 완료 판정**됐습니다. Source·회귀 시험·격리 및 부분 운영 관찰·경보와 대응 절차를 결합한 판정이며, 과거 Redis 오류의 저수준 원인과 현행 이미지의 지속 운영 장애→경보 확인→수동 복구 전체 재현은 미확인으로 남았습니다. 확인 범위와 한계는 [완료 판정 기록](https://github.com/seokpan/seokpan-app/issues/117#issuecomment-5945531625)에서 확인합니다.
 
